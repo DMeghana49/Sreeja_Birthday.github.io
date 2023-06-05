@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+h1 {
+      font-size: 24px;
+      font-family: 'Times New Roman', Times, serif;
+      color: #f9f5f5;
+    }
+
+    p {
+      padding-top: 20px;
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+      color: #fbf9f9;
+    }
+.bg-image {
+  /* The image used */
+  background-image: url("Cover.jpg");
+  
+  /* Add the blur effect */
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    label {
+      padding-top: 5px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      color: #fcfcd6; /* Changed font color to white */
+    }
+
+    input[type="text"],
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 300px;
+    }
+
+    .question-container {
+      display: flexbox;
+      font-weight: 300;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .question-container label {
+      margin-bottom: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 12px 24px;
+      background-color: #ff4081;
+      color: #ffffff;
+      font-size: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #d81b60;
+    }
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: transparent; /* Fallback color */
+  background-color: transparent; /* Black w/opacity/see-through */
+  color: rgb(255, 234, 234);
+  font-weight: bold;
+  border: 3px solid rgb(130, 102, 102);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.enter-button {
+      padding-top: 700px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ee6c97;
+      color: #f4f0f0;
+      font-size: 15px;
+      border: black;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: #d81b60;
+    }
+</style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+
+<div class="bg-text">
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Answer the following questions:</h1>
+    <p>No need of special characters and upper case letters</p>
+    
+    <form id="quiz-form">
+      <div class="question">
+        <label for="q1">Favorite IPL team of Sreeja:</label>
+        <input type="text" id="q1" required>
+      </div>
+      <div class="question">
+        <label for="q2">From which movie is the BGM of Sreeja's phone ringtone when her phone got caught in Sridhar sir's class</label>
+        <input type="text" id="q2" required>
+      </div>
+      <div class="question">
+        <label for="q3">Favorite snack of Sreeja during summers</label>
+        <input type="text" id="q3" required>
+      </div>
+      <div class="question">
+        <label for="q4">The tag word she had added in 1st semester's English class:</label>
+        <input type="text" id="q4" required>
+      </div>
+      <div class="question">
+        <label for="q5">How many teeth did Sreeja go to the dentist for</label>
+        <select id="q5" required>
+          <option value="">Select an option</option>
+          <option value="2">2</option>
+          <option value="5">5</option>
+          <option value="7">7</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+      
+      <button class= "enter-button" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<script>
+    document.getElementById('quiz-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Check answers
+      var q1 = document.getElementById('q1').value.toLowerCase();
+      var q2 = document.getElementById('q2').value.toLowerCase();
+      var q3 = document.getElementById('q3').value.toLowerCase();
+      var q4 = document.getElementById('q4').value.toLowerCase();
+      var q5 = document.getElementById('q5').value;
+
+      if (q1 === 'srh' && q2 === 'uturn' && q3 === 'icecubes' && q4 === 'silent' && q5 === '9') {
+        // All answers are correct, redirect to another page
+        window.location.href = 'video.html';
+      } else {
+        // Answers are incorrect, display error message
+        alert('Please try again');
+      }
+    });
+  </script>
+
+
+</body>
+</html>
