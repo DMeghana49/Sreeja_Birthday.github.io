@@ -1,2 +1,5 @@
 # Sreeja_Birthday.github.io
-A simple Website with a bit of creativity for a birthday wish
+A simple Website for wishing birthday to my friend.
+
+To view the deployment follow the below link:
+**https://sreejabirthday.netlify.app/**
